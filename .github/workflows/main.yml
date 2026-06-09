@@ -1,0 +1,29 @@
+name: My CI/CD Pipeline
+
+# The Event
+on:
+  push:
+    branches:
+      - main
+
+# The Jobs
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    # The Steps
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Show current directory
+        run: pwd
+
+      - name: List files
+        run: ls -la
+
+      - name: Make directory
+        run: mkdir my_new_directory
+
+      - name: Echo statement
+        run: echo " I am learning Github Actions"
