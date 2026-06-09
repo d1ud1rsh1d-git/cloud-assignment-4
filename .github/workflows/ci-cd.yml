@@ -3,19 +3,14 @@ name: CI-CD
 on:
   push:
 
-# This environment variable forces all JavaScript actions to use Node.js 24, 
-# which resolves the deprecation warning you are seeing.
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
 jobs:
   build:
     runs-on: ubuntu-latest
     
     steps:
-      # The checkout action that was triggering the warning
+      # Updated to v6, which natively runs on Node 24
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         
       # --- Your other build steps go below ---
       
