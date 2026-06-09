@@ -13,8 +13,9 @@ jobs:
 
     # The Steps
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      # Step 0: Pull down your repository code
+      - name: Fetch Codebase
+        uses: actions/checkout@v4
 
       - name: Show current directory
         run: pwd
